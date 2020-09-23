@@ -5,6 +5,15 @@ import { Form, Input, InputNumber, Button } from 'antd';
 export default class Forms extends Component {
 
     render() {
+        
+        const layout = {
+            labelCol: {
+              span: 8,
+            },
+            wrapperCol: {
+              span: 10,
+            },
+          };
 
         const validateMessages = {
             required: '${label} is required!',
@@ -15,7 +24,7 @@ export default class Forms extends Component {
             number: {
               range: '${label} must be between ${min} and ${max}',
             },
-          };
+        };
           
         return (
             <div>
@@ -24,7 +33,7 @@ export default class Forms extends Component {
 
                 <div>
 
-              <Form validateMessages={validateMessages}>
+              <Form {...layout} validateMessages={validateMessages}>
                     <Form.Item
                         name={['name']}
                         label="Name"
@@ -65,7 +74,7 @@ export default class Forms extends Component {
                         <Input.TextArea />
                     </Form.Item>
 
-                    <Form.Item>
+                    <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
                         <Button type="primary" htmlType="submit">
                         Submit
                         </Button>
