@@ -23,7 +23,7 @@ export default class Dashboard extends Component {
                     style={{ marginTop: 16 }}
                     type="inner"
                     title="Name"
-                    extra={<a href="#">Edit</a>}
+                    extra={<a href="/forms">Edit</a>}
                     >
                         
                         <Meta 
