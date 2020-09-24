@@ -4,8 +4,15 @@ import { Form, Input, InputNumber, Button } from 'antd';
 
 export default class Forms extends Component {
 
+    state = {
+        name: '',
+        email: '',
+        age: 0,
+        intro: '',
+    }
+
     render() {
-        
+
         const layout = {
             labelCol: {
               span: 8,
@@ -43,8 +50,11 @@ export default class Forms extends Component {
                         },
                         ]}
                     >
-                        <Input />
+                        <Input  
+                            onChange={ e => {this.setState({ name: e.target.value }) }}
+                        />
                     </Form.Item>
+
                     <Form.Item
                         name={['email']}
                         label="Email"
@@ -54,8 +64,11 @@ export default class Forms extends Component {
                         },
                         ]}
                     >
-                        <Input />
+                        <Input 
+                            onChange={ e => {this.setState({ email: e.target.value }) }}
+                        />
                     </Form.Item>
+
                     <Form.Item
                         name={['age']}
                         label="Age"
@@ -67,11 +80,15 @@ export default class Forms extends Component {
                         },
                         ]}
                     >
-                        <InputNumber />
+                        <InputNumber 
+                            onChange={ value => {this.setState({ age: value }) }}
+                        />
                     </Form.Item>
 
                     <Form.Item name={['introduction']} label="Introduction">
-                        <Input.TextArea />
+                        <Input.TextArea 
+                            onChange={ e => {this.setState({ intro: e.target.value }) }}
+                        />
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 10 }}>
