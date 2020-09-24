@@ -31,7 +31,7 @@ export default class Forms extends Component {
 
                 <NavBar />
 
-                <div>
+                <div style={{marginTop: '10%'}}>
 
               <Form {...layout} validateMessages={validateMessages}>
                     <Form.Item
@@ -74,8 +74,8 @@ export default class Forms extends Component {
                         <Input.TextArea />
                     </Form.Item>
 
-                    <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>
-                        <Button type="primary" htmlType="submit">
+                    <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 10 }}>
+                        <Button type="primary" htmlType="submit" style={{width: '60%', marginTop: '5%',backgroundColor:'#8357c5',border: 'none'}}>
                         Submit
                         </Button>
                     </Form.Item>
