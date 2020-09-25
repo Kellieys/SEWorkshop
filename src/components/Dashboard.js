@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card } from 'antd';
 import ProfilePic from '../images/cyan.png';
 import NavBar from './NavBar';
+import '../styles/Dashboard.css';
 
 const { Meta } = Card;
 
@@ -30,25 +31,29 @@ export default class Dashboard extends Component {
 
                 <NavBar />
 
-                <div>  
-                <Card>
+                <div className={"mainContainer"}>  
+                <Card
+                    style={{ borderWidth: 6, padding: 50, borderBottomColor:'#8357c5' }}
+                >
 
-                    <img src={ProfilePic} alt="Profile" />
+                    <img src={ProfilePic} alt="Profile"  className={"profilePic"}/>
              
-                    <Card
-                        style={{ marginTop: 16 }}
-                        type="inner"
-                        title={name}
-                        extra={<a href="/forms">Edit</a>}
-                    >
-                        
-                        <Meta 
-                            description={email}
-                        />
+                    <div className={"innerCard"}>
+                            <Card
+                                style={{ marginTop: 16, padding: 20 }}
+                                type="inner"
+                                title={name}
+                                extra={<a href="/forms">Edit</a>}
+                            >
+                                
+                                <Meta 
+                                    description={email} 
+                                />
 
-                            <p>{introduction}</p>
-                      
-                    </Card>
+                                    <p className={"intro"}>{introduction}</p>
+                            
+                            </Card>
+                    </div>
 
                 </Card>
                 </div>
